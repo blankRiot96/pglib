@@ -1,3 +1,4 @@
+from typing import Optional
 import pygame
 from library.utils.classes import Time
 
@@ -10,7 +11,19 @@ class LoadingScreen:
 
     FONT = pygame.font.SysFont("comicsansms", 40)
 
-    def __init__(self, state: str, assets: dict, loading_bar: LoadingBar) -> None:
+    def __init__(self, state: str, assets: dict, loading_bar: LoadingBar, debug_timer: Optional[float] = None) -> None:
+        """Constructor of the LoadingScreen.
+
+        Args:
+            state (str): Current game state.
+            assets (dict): Dictionary containing all assets.
+            loading_bar (LoadingBar): LoadingBar to display.
+            debug_timer (float): Optional amount of time to delay between each time 
+            a metafile is loaded.
+
+        Returns:
+            None
+        """
         self.state = state
         self.loading = True
         self.loading_text = "Loading"
@@ -20,7 +33,10 @@ class LoadingScreen:
         self.asset_gen = load_images(state)
         self.total_metafiles = next(self.asset_gen)
         self.loading_bar = loading_bar
-        self.t = Time(3)
+        if debug_timer is not None:
+            self.t = Time(debug_timer)
+        else:
+            self.t = None
         self.n_metafiles_loaded = 0
 
     def loading_text_mod(self):
@@ -39,7 +55,7 @@ class LoadingScreen:
         self.handle_quit()
         self.loading_text_mod()
 
-        if not self.t.update():
+        if (self.t is not None) and (not self.t.update()):
             return
 
         try:
