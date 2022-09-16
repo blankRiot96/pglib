@@ -1,4 +1,5 @@
 from typing import Optional
+
 import pygame
 from library.utils.classes import Time
 
@@ -11,14 +12,20 @@ class LoadingScreen:
 
     FONT = pygame.font.SysFont("comicsansms", 40)
 
-    def __init__(self, state: str, assets: dict, loading_bar: LoadingBar, debug_timer: Optional[float] = None) -> None:
+    def __init__(
+        self,
+        state: str,
+        assets: dict,
+        loading_bar: LoadingBar,
+        debug_timer: Optional[float] = None,
+    ) -> None:
         """Constructor of the LoadingScreen.
 
         Args:
             state (str): Current game state.
             assets (dict): Dictionary containing all assets.
             loading_bar (LoadingBar): LoadingBar to display.
-            debug_timer (float): Optional amount of time to delay between each time 
+            debug_timer (float): Optional amount of time to delay between each time
             a metafile is loaded.
 
         Returns:
