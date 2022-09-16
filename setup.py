@@ -12,7 +12,7 @@ particle systems, entity and tilemap management etc.
 
 # Setup
 setup(
-    name="library",
+    name="pglib",
     version=VERSION,
     author="Disa, Axis, Snek",
     email="blankRiot96@gmail.com",

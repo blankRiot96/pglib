@@ -9,8 +9,8 @@ from typing import Tuple, Union
 
 import pygame
 
-from library.common import EventInfo
-from library.utils.funcs import circle_surf, get_movement
+from pglib.common import EventInfo
+from pglib.utils.funcs import circle_surf, get_movement
 
 
 class ParticleManager(set):

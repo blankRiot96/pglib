@@ -8,8 +8,8 @@ from pathlib import Path
 
 import pygame
 
-from library.utils.animation import Animation
-from library.utils.classes import Expansion, Glow, Time
+from pglib.utils.animation import Animation
+from pglib.utils.classes import Expansion, Glow, Time
 
 pygame.font.init()
 

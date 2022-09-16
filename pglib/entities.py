@@ -4,7 +4,7 @@ import typing
 
 import pygame
 
-from library.common import EventInfo
+from pglib.common import EventInfo
 
 
 class Entity(abc.ABC):

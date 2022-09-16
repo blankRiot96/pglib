@@ -19,8 +19,8 @@ from typing import List, Set
 import pygame
 
 from game.common import DATA_DIR
-from library.common import Pos
-from library.particles import AngularParticle
+from pglib.common import Pos
+from pglib.particles import AngularParticle
 
 
 class Explosion:

@@ -5,7 +5,7 @@ The source code is distributed under the MIT license.
 
 import pygame
 
-from library.common import Events, Pos, Size
+from pglib.common import Events, Pos, Size
 
 
 class Toggle:

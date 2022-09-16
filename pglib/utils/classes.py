@@ -9,6 +9,7 @@ The source code is distributed under the MIT license.
 import time
 
 import pygame
+from pglib.utils.funcs import circle_surf
 
 
 class Glow:

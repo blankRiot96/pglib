@@ -5,7 +5,7 @@ The source code is distributed under the MIT license.
 
 import pygame
 
-from library.utils import Animation
+from pglib.utils import Animation
 
 
 class Tile:
