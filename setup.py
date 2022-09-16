@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 # py -m build
 # twine upload dist/*
-VERSION = "0.0.2"
+VERSION = "0.0.2.dev1"
 DESCRIPTION = "A helper library for pygame applications"
 LONG_DESCRIPTION = """
 A helper library for pygame applications 
