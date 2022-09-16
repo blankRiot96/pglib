@@ -10,13 +10,12 @@ from pglib.ui.loading_bar import LoadingBar
 class LoadingScreen:
     """A loading screen."""
 
-    FONT = pygame.font.SysFont("comicsansms", 40)
-
     def __init__(
         self,
         state: str,
         assets: dict,
         loading_bar: LoadingBar,
+        font: pygame.font.Font,
         debug_timer: Optional[float] = None,
     ) -> None:
         """Constructor of the LoadingScreen.
@@ -32,6 +31,7 @@ class LoadingScreen:
             None
         """
         self.state = state
+        self.font = font
         self.loading = True
         self.loading_text = "Loading"
         self.loading_t = Time(0.7)
@@ -77,7 +77,7 @@ class LoadingScreen:
 
     def draw(self, screen: pygame.Surface) -> None:
         screen.blit(self.loading_screen_bg, (0, 0))
-        loading_text_surf = self.FONT.render(self.loading_text, True, "black")
+        loading_text_surf = self.font.render(self.loading_text, True, "black")
         screen.blit(loading_text_surf, (120, 540))
 
         self.loading_bar.draw(screen)
