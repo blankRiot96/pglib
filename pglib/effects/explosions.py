@@ -17,8 +17,8 @@ import random
 from typing import List, Set
 
 import pygame
-
 from game.common import DATA_DIR
+
 from pglib.common import Pos
 from pglib.particles import AngularParticle
 

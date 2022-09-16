@@ -8,8 +8,8 @@ import math
 
 import pygame
 
-from pglib.utils import load_font
 from pglib.particles import TextParticle
+from pglib.utils import load_font
 
 
 class PlayerHealthBar:

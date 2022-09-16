@@ -9,7 +9,6 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import pygame
-
 from game.common import SAVE_DATA
 
 logger = logging.getLogger()

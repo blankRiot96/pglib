@@ -59,4 +59,3 @@ class LoadingScreen:
 
         self.loading_bar.draw(screen)
         pygame.display.flip()
-

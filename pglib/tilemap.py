@@ -3,15 +3,16 @@ This file is a part of the 'Unnamed' source code.
 The source code is distributed under the MIT license.
 """
 
-from multiprocessing.sharedctypes import Value
 import pathlib
 import typing
+from multiprocessing.sharedctypes import Value
 from typing import Optional, Sequence
 
 import pygame
-import pytmx 
+import pytmx
 
 from .tiles import SpikeTile, Tile
+
 
 class TileLayerMap:
     """
@@ -85,7 +86,6 @@ class TileLayerMap:
                         )
 
                         self.special_tiles[(x, y)] = tile_instance
-
 
     def make_map(self, tileset: Optional[Sequence] = None) -> pygame.Surface:
         """

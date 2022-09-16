@@ -37,4 +37,3 @@ class LoadingBar:
         """
         pygame.draw.rect(screen, self.back_color, self.back_rect)
         pygame.draw.rect(screen, self.fore_color, self.rect)
-
