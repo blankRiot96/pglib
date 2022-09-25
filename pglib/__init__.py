@@ -5,3 +5,5 @@ The source code is distributed under the MIT license.
 
 from pglib.particles import AngularParticle, MovingParticle, Particle
 from pglib.tiles import AnimatedDecorationTile, Tile
+
+print("hello uwu")
