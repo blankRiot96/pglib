@@ -1,5 +1,5 @@
 import pygame
-from library.common import ColorValue
+from pglib.common import ColorValue
 
 
 class LoadingBar:
