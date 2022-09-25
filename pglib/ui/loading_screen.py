@@ -1,10 +1,12 @@
 from typing import Optional
 
 import pygame
-from library.utils.classes import Time
+from pglib.utils.classes import Time
 
 from pglib.sprite.load import load_images
 from pglib.ui.loading_bar import LoadingBar
+
+from pglib.common import ColorValue
 
 
 class LoadingScreen:
@@ -16,6 +18,7 @@ class LoadingScreen:
         assets: dict,
         loading_bar: LoadingBar,
         font: pygame.font.Font,
+        font_color: ColorValue,
         debug_timer: Optional[float] = None,
     ) -> None:
         """Constructor of the LoadingScreen.
@@ -36,6 +39,7 @@ class LoadingScreen:
         self.loading_text = "Loading"
         self.loading_t = Time(0.7)
         self.assets = assets
+        self.font_color = font_color
         self.loading_screen_bg = assets["loading_screen"]
         self.asset_gen = load_images(state)
         self.total_metafiles = next(self.asset_gen)
@@ -77,8 +81,8 @@ class LoadingScreen:
 
     def draw(self, screen: pygame.Surface) -> None:
         screen.blit(self.loading_screen_bg, (0, 0))
-        loading_text_surf = self.font.render(self.loading_text, True, "black")
-        screen.blit(loading_text_surf, (120, 540))
+        loading_text_surf = self.font.render(self.loading_text, True, self.font_color)
+        screen.blit(loading_text_surf, (self.loading_bar.rect.x + 5, self.loading_bar.rect.y - self.font.get_height()))
 
         self.loading_bar.draw(screen)
         pygame.display.flip()
