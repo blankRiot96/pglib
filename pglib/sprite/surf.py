@@ -23,7 +23,6 @@ class FadingImage:
         speed: int,
         duration: int,
         pos: Tuple[int],
-        screen: pygame.Surface,
         starting_alpha: int = 0,
         fading_in: bool = True,
     ):
@@ -32,7 +31,6 @@ class FadingImage:
         self.speed = speed
         self.pos = pos
         self.duration = duration
-        self.screen = screen
         self.alpha = starting_alpha
         self.fading_in = fading_in
         self.finished = False
@@ -66,7 +64,7 @@ class FadingImage:
 
     def update(self, delta_time: float = 1):
         """
-        Updates, fades in/out, draws the image
+        Updates, fades in/out
 
         Parameters:
                 delta_time: Time between frames (optional)
@@ -78,7 +76,15 @@ class FadingImage:
 
         self.image.set_alpha(self.alpha)
 
-        self.screen.blit(self.image, self.pos)
+
+    def draw(self, screen: pygame.Surface):
+        """
+        Draws the image
+
+        Parameters:
+                screen: Screen to draw image on
+        """
+        screen.blit(self.image, self.pos)
 
 
 class Background:
